@@ -1,0 +1,4 @@
+FAISS is a library developed by Facebook AI Research for efficient similarity search in large datasets. 
+It is often used for vector search, where text, images, or audio are converted into embeddings. 
+By using cosine similarity or inner product, FAISS can quickly find the most similar items. 
+Applications include recommendation systems, image retrieval, and semantic search.

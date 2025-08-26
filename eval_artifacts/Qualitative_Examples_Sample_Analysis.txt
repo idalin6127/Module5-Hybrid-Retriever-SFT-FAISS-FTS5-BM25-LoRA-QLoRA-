@@ -1,0 +1,43 @@
+1. Query: “what is attention in transformers”
+
+Gold document: 01_transformers
+
+Vector-only: The correct document (01_transformers) appears at rank 1, but irrelevant documents (03_faiss, 02_bm25) also show up in the top-3. This indicates that semantic retrieval tends to surface semantically related but off-topic content.
+
+Keyword-only: Also hits the correct document because the terms attention and transformers are explicitly present in the text. However, extra noise appears in the results.
+
+Hybrid-sum: Combines both signals, pushing 01_transformers to the top with a normalized score of 1.0, while down-weighting unrelated results.
+
+Observation: Hybrid ensures the correct document is clearly ranked first, reducing the “drift” seen in pure semantic search.
+
+2. Query: “why are transformers good for long texts”
+
+Gold document: 01_transformers
+
+Vector-only: Correctly ranks 01_transformers at the top by recognizing that long texts is semantically equivalent to handling long sequences.
+
+Keyword-only: Also retrieves the correct document because of the explicit keyword transformers, though less effective at capturing the paraphrase.
+
+Hybrid-sum: Preserves the semantic advantage of vectors while reinforcing keyword matches, keeping 01_transformers at rank 1 and lowering scores for distractors.
+
+Observation: This case shows how vector search captures paraphrasing, while hybrid fusion stabilizes the ranking.
+
+3. Query: “self-attention explained simply”
+
+Gold document: 01_transformers
+
+Vector-only: Hits the correct document at rank 1, but also returns unrelated candidates such as 03_faiss and 02_bm25.
+
+Keyword-only: Retrieves only 01_transformers, but recall is low because fewer matches are returned.
+
+Hybrid-sum: Keeps 01_transformers as the top result, combining signals to avoid the keyword-only recall drop and the vector-only noise.
+
+Observation: Hybrid balances precision and recall—semantic evidence expands coverage, while keywords anchor relevance.
+
+📌 Overall Insights
+
+Keyword-only: Precise when explicit terms are present, but brittle against paraphrases and semantic variations.
+
+Vector-only: Strong at capturing synonyms and paraphrases, but prone to semantic drift and noisy results.
+
+Hybrid fusion: Leverages the strengths of both, producing more stable top-k rankings and improving overall recall and robustness.

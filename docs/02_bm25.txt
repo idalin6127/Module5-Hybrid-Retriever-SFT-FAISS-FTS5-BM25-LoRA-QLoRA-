@@ -1,0 +1,4 @@
+BM25 is a ranking function used in search engines to match documents with queries. 
+It improves upon TF-IDF by introducing term frequency saturation and document length normalization. 
+When you search for products like shoes online, BM25 helps rank the most relevant results. 
+Many search engines use BM25 or its variants as their default ranking algorithm.
