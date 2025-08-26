@@ -1,1 +1,5 @@
 *.docx
+AI_Engineer_Ida_Lin_resume.pdf
+adapter_model.safetensors
+optimizer.pt
+*.env

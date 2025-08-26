@@ -1,0 +1,31 @@
+Career Summary
+
+I’m a Machine Learning Engineer with hands-on experience in LLM fine-tuning, retrieval-augmented generation, and AI safety. My background combines applied research at Inference AI with practical projects in data analytics, databases, and full-stack AI assistant development. I bring a mix of AI R&D skills (RLHF, LoRA, multimodal pipelines) and data engineering skills (SQL, ETL, Power BI dashboards, Oracle DB design).
+
+Experience Highlight: Multimodal Pipelines at Inference AI
+
+At Inference AI, I built multimodal data pipelines that processed PDFs, webpages, and audio using OCR, web scraping, and Whisper ASR. This work reduced preprocessing time by 40% and produced cleaner datasets for downstream NLP tasks. The experience gave me a strong foundation in handling messy real-world data and preparing it for LLMs.
+
+Retrieval & LLM Integration
+
+I developed a hybrid retrieval system (FAISS + SQLite BM25/FTS5), deployed via FastAPI, which improved recall by 25% over keyword-only baselines. I also fine-tuned LLaMA3 (7B) with LoRA/QLoRA, boosting summarization accuracy by 15% under tight GPU constraints. Together, these projects gave me practical insight into building efficient, production-friendly RAG systems.
+
+AI Safety & Alignment
+
+I implemented reward modeling (RLHF) using DeBERTa-v3 on preference data, which produced evaluation scores better correlated with human judgment than traditional metrics. I also delivered AI Safety demos (hallucination detection, jailbreak defense, bias analysis), where modular safety wrappers detected over 70% jailbreak attempts. This work deepened my understanding of alignment and safety challenges in modern LLMs.
+
+Full-Stack AI Assistant
+
+One of my biggest technical wins was building a full-stack AI Research Assistant: Whisper ASR → semantic search → summarization → TTS → Notion sync. This project demonstrated my ability to combine multiple AI components into a seamless workflow with persistent histories, making it suitable for real research environments.
+
+Projects: SQL + Data Analytics
+
+Beyond AI, I also built Insurance Risk Modeling dashboards in Power BI backed by SQL Server queries, which automated ETL and reduced manual reporting by 30%. In another project, I designed and optimized an Oracle-based college website database with ERD, triggers, and sequences to ensure reliable data operations. These experiences highlight my strength in bridging ML + Data Engineering.
+
+Collaboration & Communication
+
+I regularly collaborated with researchers, engineers, and stakeholders to clarify requirements and deliver functional prototypes. I’ve been recognized for transforming ambiguous requests into working systems that balance research goals with real-world usability.
+
+Fun Fact
+
+I enjoy experimenting with open-source AI projects—recently testing vLLM deployment, MinHash deduplication, and PII removal pipelines. I also maintain a personal repo where I share ML experiments and workflow automation tools.
