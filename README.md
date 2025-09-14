@@ -32,6 +32,22 @@ Part 2 focuses on **Supervised Fine-Tuning (SFT I)**: format data into **ChatML*
 
 ---
 
+## 🔒 Safety Wrapper
+
+As part of the fine-tuning and evaluation experiments, I implemented an **AI safety wrapper** to test the model’s robustness against adversarial and jailbreak attempts.
+
+### Key Features
+- **Adversarial Input Detection:** Designed rules and lightweight classifiers to identify suspicious prompts (e.g., prompt injections, jailbreak attempts).  
+- **Jailbreak Success Rate Reduction:** In evaluation, the wrapper successfully detected and blocked **>70%** of adversarial/jailbreak attempts.  
+- **Integration with RAG/LLM Pipelines:** The safety layer sits between the user query and model response, making it transferable to **fraud prevention and compliance workflows**.  
+- **Customizable Policies:** Detection thresholds and rules can be extended to cover domain-specific risks (e.g., financial fraud, compliance violations).  
+
+### Example Workflow
+User Query --> Safety Wrapper --> LLM Response
+| |
+Adversarial? ---> Block/Flag
+---
+
 ## 🛠️ Tech Stack
 
 **Hybrid Retrieval**
