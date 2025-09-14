@@ -47,6 +47,26 @@ Part 2 focuses on **Supervised Fine-Tuning (SFT I)**: format data into **ChatML*
 - **Data**: **ChatML** format  
 - **Monitoring**: `wandb` / TensorBoard (optional)
 
+**SFT I**
+- **Training**: **TRL** (HF), **PEFT** (LoRA/QLoRA), **DeepSpeed** (ZeRO)  
+- **Models**: Llama/Mistral/Zephyr (HF)  
+- **Data**: **ChatML** format  
+- **Monitoring**: `wandb` / TensorBoard (optional)
+
+---
+
+
+## 🔥 Architecture / Workflow Diagram 
+
+flowchart LR
+  A[Docs/Chunks+Metadata] --> B[SQLite (metadata, FTS5)]
+  A --> C[FAISS (embeddings)]
+  D[Query] --> E[Keyword Search]
+  D --> F[Vector Search]
+  E --> G[Fusion (RRF/Weighted)]
+  F --> G
+  G --> H[Ranked Results via FastAPI]
+
 ---
 
 ## 📂 Deliverables
@@ -71,6 +91,24 @@ Part 2 focuses on **Supervised Fine-Tuning (SFT I)**: format data into **ChatML*
   - `sft_results.md` — LoRA vs Full FT: loss curves, runtime, sample outputs
 
 ---
+
+
+## 🔥 How to Run / Quick Start
+
+# Build index
+python hybrid_search/index_builder.py --data ./docs --out ./db
+
+# Start API
+uvicorn hybrid_search.api:app --reload --port 8000
+
+# Query
+curl "http://localhost:8000/hybrid_search?query=transformer attention&k=3"
+
+# LoRA fine-tune
+python sft/lora_train.py --model HuggingFaceH4/zephyr-7b-alpha --data ./data/chatml.jsonl --epochs 3
+
+---
+
 
 ## 🌟 Highlights
 - **Hybrid retrieval**: **FAISS + FTS5/BM25** with **RRF/weighted** score fusion for better relevance.  
