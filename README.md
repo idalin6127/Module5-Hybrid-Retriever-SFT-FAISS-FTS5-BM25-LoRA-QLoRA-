@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="lgo/logo.png" alt="Project Logo" width="500"/>
+  <img src="logo/logo.png" alt="Project Logo" width="500"/>
 </p>
 
 # Module 5 — Embedding Database Optimization & SFT I
