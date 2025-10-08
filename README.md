@@ -1,4 +1,8 @@
-# Week 5 — Embedding Database Optimization & SFT I
+<p align="left">
+  <img src="lgo/logo.png" alt="Project Logo" width="500"/>
+</p>
+
+# Module 5 — Embedding Database Optimization & SFT I
 
 ## 🚀 Quick Summary
 Implemented a **hybrid retrieval system** that merges **dense semantic search (FAISS)** with **sparse keyword search (SQLite FTS5/BM25)** using score fusion (e.g., **RRF**, weighted sum).  
